@@ -7,12 +7,53 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/happy"
+        android:id="@+id/whimsical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Happy"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="130dp"
+        android:text="Whimsical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/romantic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="142dp"
+        android:text="Romantic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whimsical" />
+
+    <Button
+        android:id="@+id/adventurous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="88dp"
+        android:text="Adventurous"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/romantic" />
+
+    <Button
+        android:id="@+id/sad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginBottom="217dp"
+        android:text="Sad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adventurous" />
 </androidx.constraintlayout.widget.ConstraintLayout>

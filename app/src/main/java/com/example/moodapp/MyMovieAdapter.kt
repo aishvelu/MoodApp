@@ -11,6 +11,8 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.lec6demo.R
 
 class MyMovieAdapter(
     val movieList : List<Movie>,
@@ -33,9 +35,15 @@ class MyMovieAdapter(
 
     override fun onBindViewHolder(holder: MyMovieViewHolder, position: Int) {
         val movie : Movie = movieList[position]
-        val id = context.resources.getIdentifier(movie.cover, "drawable",
-            context.packageName)
-        holder.movieImage.setImageResource(id)
+        //val id = context.resources.getIdentifier(movie.cover, "drawable",
+        //    context.packageName)
+        Glide
+            .with(context)
+            .load(movie.cover)
+            .centerCrop()
+            .placeholder(R.drawable.ic_launcher_background)
+            .into(holder.movieImage)
+        //holder.movieImage.setImageResource(id)
         holder.movieName.text = movie.name
         holder.movieGenre.text = movie.genre
         holder.cardView.setOnClickListener {
