@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.lec6demo'
+    namespace 'com.example.moodapp'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.lec6demo"
+        applicationId "com.example.moodapp"
         minSdk 30
         targetSdk 32
         versionCode 1

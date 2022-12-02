@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MoodApp</string>
+    <string name="select">Click on your mood preference!</string>
 </resources>

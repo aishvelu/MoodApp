@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.example.lec6demo.R
+import com.example.moodapp.R
 
 class DisplayMovieActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxHeight="120dp"
-        app:cardBackgroundColor="#DD8DF8F4"
+        app:cardBackgroundColor="@color/blueball"
         app:cardCornerRadius="0dp"
         app:cardElevation="0dp"
         app:cardMaxElevation="0dp"

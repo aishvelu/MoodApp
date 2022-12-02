@@ -12,7 +12,6 @@ import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.lec6demo.R
 
 class MyMovieAdapter(
     val movieList : List<Movie>,

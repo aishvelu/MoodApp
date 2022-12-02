@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lec6demo.R
 
 class MovieOptions : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +27,7 @@ class MovieOptions : AppCompatActivity() {
                 mood = currMood
             }
         }
+        //MovieRepository.clearMovie()
         val adapter = MyMovieAdapter(MovieRepository.movieList, this, intentLauncher2)
         val recyclerView: RecyclerView = findViewById(R.id.recycler)
         recyclerView.layoutManager = LinearLayoutManager(this)
