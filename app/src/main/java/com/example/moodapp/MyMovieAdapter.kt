@@ -47,11 +47,11 @@ class MyMovieAdapter(
         holder.movieName.text = movie.name
         holder.movieGenre.text = movie.genre
         holder.cardView.setOnClickListener {
-            val intent = Intent(context, MovieDescription::class.java)
+            val intent = Intent(context, DisplayMovieActivity::class.java)
             intent.putExtra("Cover", movie.cover)
             intent.putExtra("Name", holder.movieName.text.toString())
             intent.putExtra("Genre", holder.movieGenre.text.toString())
-            intent.putExtra("Pos", position.toString())
+            //intent.putExtra("Pos", position.toString())
             intentLauncher.launch(intent)
 
             notifyItemChanged(position)

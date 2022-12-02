@@ -40,6 +40,7 @@ class MovieOptions : AppCompatActivity() {
                     MovieRepository.addMovie(n, adapter)
                 }
             }
+
         }
     }
 }
