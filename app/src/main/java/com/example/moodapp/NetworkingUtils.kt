@@ -6,7 +6,7 @@ import org.json.JSONObject
 import java.io.IOException
 import java.io.StringReader
 
-var moodId = "1"
+var moodId = ""
 fun getMovie( mood: String, callback : (List<Movie>) -> Unit) {
     if (mood == "whimsical"){
         moodId = "1"
@@ -17,12 +17,12 @@ fun getMovie( mood: String, callback : (List<Movie>) -> Unit) {
     else if (mood == "romantic"){
         moodId = "3"
     }
-    else {
+    else if (mood == "sad") {
         moodId = "4"
     }
     val client = OkHttpClient()
     val request = Request.Builder()
-        .url("http://143.198.115.54:8080/posts/"+ moodId)
+        .url("http://34.86.132.50/api/moods/" + moodId +"/")
         .get()
         .build()
 
@@ -37,11 +37,13 @@ fun getMovie( mood: String, callback : (List<Movie>) -> Unit) {
             } else {
                 val body = response.body
                 val moshi: Moshi = Moshi.Builder().build()
-                val listType = Types.newParameterizedType(List::class.java, Movie::class.java)
-                val adapter2: JsonAdapter<List<Movie>> = moshi.adapter(listType)
-                val result = adapter2.fromJson(body!!.source())
+                val jsonAdapter: JsonAdapter<MovieCategory> =
+                    moshi.adapter<MovieCategory>(MovieCategory::class.java)
+                //val listType = Types.newParameterizedType(List::class.java, MovieCategory::class.java)
+                //val adapter2: JsonAdapter<List<Movie>> = moshi.adapter(listType)
+                val result = jsonAdapter.fromJson(body!!.source())
                 if (result != null) {
-                    callback(result)
+                    callback(result.recommendedList)
                 }
             }
         }

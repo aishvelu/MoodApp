@@ -2,6 +2,7 @@ package com.example.moodapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,17 +19,18 @@ class MovieOptions : AppCompatActivity() {
 //            Movie(name="The Lion King", genre= "Children", cover="lionking"),
 //            Movie(name="Tangled", genre= "Children", cover="tangled")
 //        )
-        var mood = ""
-        val intentLauncher2 = registerForActivityResult(
+        var mood = "whimsical"
+        val intentLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { results ->
             val currMood = results.data?.extras?.getString("Mood")
             if (currMood != null) {
                 mood = currMood
+                Log.d("Mood", mood)
             }
         }
-        //MovieRepository.clearMovie()
-        val adapter = MyMovieAdapter(MovieRepository.movieList, this, intentLauncher2)
+        val adapter = MyMovieAdapter(MovieRepository.movieList, this, intentLauncher)
+        MovieRepository.clearMovie(adapter)
         val recyclerView: RecyclerView = findViewById(R.id.recycler)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
@@ -40,7 +42,7 @@ class MovieOptions : AppCompatActivity() {
                     MovieRepository.addMovie(n, adapter)
                 }
             }
-
         }
+        MovieRepository.clearMovie(adapter)
     }
 }

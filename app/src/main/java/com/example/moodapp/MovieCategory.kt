@@ -4,8 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class Movie(
+data class MovieCategory(
     @Json(name = "id") var id: Integer,
-    @Json(name = "name") var name: String,
-    @Json(name = "genre")var genre: String,
-    @Json(name = "image")var image: String,)
+    @Json(name = "mood") var mood: String,
+    @Json(name = "recommend") var recommendedList: List<Movie>,)

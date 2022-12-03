@@ -38,7 +38,7 @@ class MyMovieAdapter(
         //    context.packageName)
         Glide
             .with(context)
-            .load(movie.cover)
+            .load(movie.image)
             .centerCrop()
             .placeholder(R.drawable.ic_launcher_background)
             .into(holder.movieImage)
@@ -47,7 +47,7 @@ class MyMovieAdapter(
         holder.movieGenre.text = movie.genre
         holder.cardView.setOnClickListener {
             val intent = Intent(context, DisplayMovieActivity::class.java)
-            intent.putExtra("Cover", movie.cover)
+            intent.putExtra("Cover", movie.image)
             intent.putExtra("Name", holder.movieName.text.toString())
             intent.putExtra("Genre", holder.movieGenre.text.toString())
             //intent.putExtra("Pos", position.toString())

@@ -19,25 +19,25 @@ class MainActivity : AppCompatActivity() {
         val whimButton: Button = findViewById(R.id.whimsical)
         whimButton.setOnClickListener{
             var intent = Intent(this, MovieOptions::class.java)
-            intent.putExtra("Mood", whimButton.text.toString())
+            intent.putExtra("Mood", "whimsical")
             intentLauncher.launch(intent)
         }
         val romButton: Button = findViewById(R.id.romantic)
         romButton.setOnClickListener{
             var intent = Intent(this, MovieOptions::class.java)
-            intent.putExtra("Mood", romButton.text.toString())
+            intent.putExtra("Mood", "romantic")
             intentLauncher.launch(intent)
         }
         val advButton: Button = findViewById(R.id.adventurous)
         advButton.setOnClickListener{
             var intent = Intent(this, MovieOptions::class.java)
-            intent.putExtra("Mood", advButton.text.toString())
+            intent.putExtra("Mood", "adventurous")
             intentLauncher.launch(intent)
         }
         val sadButton: Button = findViewById(R.id.sad)
         sadButton.setOnClickListener{
             var intent = Intent(this, MovieOptions::class.java)
-            intent.putExtra("Mood", sadButton.text.toString())
+            intent.putExtra("Mood", "sad")
             intentLauncher.launch(intent)
         }
     }
