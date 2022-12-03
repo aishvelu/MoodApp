@@ -19,15 +19,18 @@ class MovieOptions : AppCompatActivity() {
 //            Movie(name="The Lion King", genre= "Children", cover="lionking"),
 //            Movie(name="Tangled", genre= "Children", cover="tangled")
 //        )
-        var mood = "whimsical"
+        var mood = ""
+        var moodresult = getIntent().extras?.getString("Mood")
+        if (moodresult!=null){
+            mood = moodresult
+        }
         val intentLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { results ->
-            val currMood = results.data?.extras?.getString("Mood")
-            if (currMood != null) {
-                mood = currMood
-                Log.d("Mood", mood)
-            }
+//            val currMood = results.data?.extras?.getString("Mood")
+//            if (currMood != null) {
+//                mood = currMood
+//            }
         }
         val adapter = MyMovieAdapter(MovieRepository.movieList, this, intentLauncher)
         MovieRepository.clearMovie(adapter)

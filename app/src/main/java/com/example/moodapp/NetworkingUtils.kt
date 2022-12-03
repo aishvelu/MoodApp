@@ -12,12 +12,12 @@ fun getMovie( mood: String, callback : (List<Movie>) -> Unit) {
         moodId = "1"
     }
     else if (mood == "adventurous"){
-        moodId = "2"
-    }
-    else if (mood == "romantic"){
         moodId = "3"
     }
-    else if (mood == "sad") {
+    else if (mood == "romantic"){
+        moodId = "2"
+    }
+    else {
         moodId = "4"
     }
     val client = OkHttpClient()
